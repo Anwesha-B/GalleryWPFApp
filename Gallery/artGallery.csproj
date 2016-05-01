@@ -121,6 +121,8 @@
   <ItemGroup>
     <Resource Include="Images\art1.JPG" />
     <Resource Include="Images\art2.JPG" />
+    <Resource Include="Images\art3.JPG" />
+    <Resource Include="Images\art4.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

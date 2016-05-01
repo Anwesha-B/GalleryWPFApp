@@ -59,8 +59,6 @@ namespace DataAccessLayer
                     FirstAquired = new DateTime(2014, 1, 3),
                     ArtistName = Artist.JoyceHicks,
                     Price = 1500,
-                    IsPaintingSelected = false
-
                 },
 
                 new Painting(2)
@@ -72,11 +70,29 @@ namespace DataAccessLayer
                     FirstAquired = new DateTime(2014, 5, 9),
                     ArtistName = Artist.BillVrscak,
                     Price = 1460,
-                    IsPaintingSelected = false
-
+                },
+                //new Painting(3)
+                //{
+                //    PaintingName = "Red Cardinal",
+                //    Description = "Birs in Acrylic with bold, edgy and flat brush strokes capturing only the minimum details to portray the essense.  ",
+                //    AmountInStock = 5,
+                //    InStock = true,
+                //    FirstAquired = new DateTime(2014, 3, 9),
+                //    ArtistName = Artist.AngelaMouton,
+                //    Price = 960,
+                //},
+                new Painting(4)
+                {
+                    PaintingName = "Red Flowers",
+                    Description = "Watercolor Genius Fabio can create these dynamic paintings that are a delicate balance of soft and hard edges. Characteruzed by very spontaneous brush strokes his work is brilliant to behold.",
+                    AmountInStock = 4,
+                    InStock = true,
+                    FirstAquired = new DateTime(2014, 2, 9),
+                    ArtistName = Artist.FabCem,
+                    Price = 2000,
                 },
 
-            };
+        };
         }
     }
 }

@@ -23,7 +23,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="#CCCCCC" BorderThickness="1">
-                        <Grid Background="{Binding AmountInStock}">
+                        <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition SharedSizeGroup="100"/>
                                 <ColumnDefinition SharedSizeGroup="*"/>
@@ -37,7 +37,7 @@
                             <Image Grid.RowSpan="2"
                                    VerticalAlignment="Center"
                                    Margin="5"
-                                   Source="{Binding PaintingId, Converter={StaticResource LocalImageConverter}}"
+                                   Source="{Binding Image}"
                                    />
                             <Label Grid.Column="1"
                                    Grid.ColumnSpan="2"
@@ -66,7 +66,8 @@
                 Grid.Column="1" 
                 Margin="5" >
             <StackPanel Orientation="Horizontal"
-                        Name="PaintingDetailView">
+                        Name="PaintingDetailView"
+                        >
                 <Grid  Margin="5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="10*" />
@@ -83,7 +84,9 @@
                            Source="{Binding Image}"
                            Grid.Row="0"
                            Grid.ColumnSpan="2"
-                           HorizontalAlignment="Left"                         
+                           HorizontalAlignment="Left" 
+                           MaxWidth="400"
+                           Margin="10"
                            />
                     <Label Grid.Row="1"
                            Grid.ColumnSpan="2"
@@ -92,10 +95,14 @@
                            FontWeight="ExtraLight"
                            Content="Select a Painting to see Details"
                            HorizontalAlignment="Center"/>
-                    <Label Name="DescriptionLabel"
-                           Grid.Row="3"
+                    <TextBlock Name="DescriptionLabel"
+                           Grid.Row="1"
                            Grid.ColumnSpan="2" 
-                           Content="{Binding Description}"/>
+                           Text="{Binding Description}"
+                           TextWrapping="WrapWithOverflow"
+                           MaxWidth="400"
+                           Margin="10"
+                           HorizontalAlignment="Left"/>
                 </Grid>
                 <Grid Margin="5">
                     <Grid.RowDefinitions>
@@ -163,12 +170,17 @@
                            Grid.Column="1" />
                    
                     <StackPanel Grid.Row="7" Visibility="Hidden" Name="ButtonBar">
-                        <Button Name="AddFakePaintingButton"
-                        Content="Change Painting" 
+                        <Button Name="ModifyPaintingButton"
+                        Content="Modify Painting" 
+                        Click="ModifyPaintingButton_Click"
                         Margin="5"/>
                         <Button Name="EditPaintingButton"
                         Content="Edit Painting" 
                         Click="EditPaintingButton_Click"
+                        Margin="5"/>
+                        <Button Name="AddPaintingButton"
+                        Content="Add Painting" 
+                        Click="AddPaintingButton_Click"
                         Margin="5"/>
 
                     </StackPanel>

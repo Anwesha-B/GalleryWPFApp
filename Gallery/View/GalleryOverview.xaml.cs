@@ -43,10 +43,9 @@ namespace Gallery.View
         {
             selectedPainting = e.AddedItems[0] as Painting;
             {
-                if(selectedPainting!=null)
+                if (selectedPainting != null)
                 {
                     PaintingDetailView.DataContext = selectedPainting;
-                    selectedPainting.IsPaintingSelected = true;
 
                     ArtistLabelHeader.Visibility = Visibility.Visible;
                     PriceLabelHeader.Visibility = Visibility.Visible;
@@ -64,6 +63,27 @@ namespace Gallery.View
             PaintingDetail Detail = new PaintingDetail();
             Detail.SelectedPainting = selectedPainting;
             Detail.Show();
+        }
+
+        private void ModifyPaintingButton_Click(object sender, RoutedEventArgs e)
+        {
+            selectedPainting.PaintingName = "Expensive Painting";
+            selectedPainting.Price = 10000000;
+        }
+
+        private void AddPaintingButton_Click(object sender, RoutedEventArgs e)
+        {
+            Painting painting = new Painting(3)
+            {
+                PaintingName = "Red Cardinal",
+                Description = "Birs in Acrylic with bold, edgy and flat brush strokes capturing only the minimum details to portray the essense.  ",
+                AmountInStock = 5,
+                InStock = true,
+                FirstAquired = new DateTime(2014, 3, 9),
+                ArtistName = Artist.AngelaMouton,
+                Price = 960,
+            };
+            paintings.Add(painting);
         }
     }
 }

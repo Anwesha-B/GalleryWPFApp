@@ -19,7 +19,6 @@ namespace Model
         private int amountInStock;
         private DateTime firstAquired;
         private BitmapImage image;
-        private bool isPaintingSelected;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -93,11 +92,11 @@ namespace Model
             set { image = value; RaisePropertyChanged("Image"); }
         }
 
-        public bool IsPaintingSelected
-        {
-            get { return isPaintingSelected; }
-            set { isPaintingSelected = value; RaisePropertyChanged("IsPaintingSelected"); }
-        }
+        //public bool IsPaintingSelected
+        //{
+        //    get { return isPaintingSelected; }
+        //    set { isPaintingSelected = value; RaisePropertyChanged("IsPaintingSelected"); }
+        //}
         private void RaisePropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)

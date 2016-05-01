@@ -57,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="Converter\DebugConverter.cs" />
     <Compile Include="Converter\ImageConverter.cs" />
+    <Compile Include="Converter\PriceConverter.cs" />
     <Compile Include="Extensions\ListExtentions.cs" />
     <Compile Include="Services\GalleryDataService.cs" />
     <Compile Include="Services\IDataService.cs" />

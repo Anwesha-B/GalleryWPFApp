@@ -54,7 +54,7 @@
                             <Label Grid.Row="1"
                                    Grid.Column="2"
                                    HorizontalAlignment="Right"
-                                   Content="{Binding Price}"
+                                   Content="{Binding Price, Converter={StaticResource LocalPriceConverter}}"
                                    FontWeight="Bold"/>
                         </Grid>
                     </Border>
@@ -147,7 +147,7 @@
                            Content="Price"
                            FontWeight="Bold" />
                     <Label Name="PriceLabel"
-                           Content="{Binding Price}"
+                           Content="{Binding Price, Converter={StaticResource LocalPriceConverter}}"
                            Grid.Row="3"
                            Grid.Column="1" />
                     <Label Grid.Row="4"

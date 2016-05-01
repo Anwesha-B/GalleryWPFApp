@@ -9,6 +9,7 @@
             <converter:ImageConverter x:Key="LocalImageConverter" />
             <BooleanToVisibilityConverter x:Key="BoolToVis" />
             <converter:DebugConverter x:Key="DebugConverter"/>
+            <converter:PriceConverter x:Key="LocalPriceConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

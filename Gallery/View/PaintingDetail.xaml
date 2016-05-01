@@ -59,7 +59,7 @@
             <TextBox Name="ArtPriceTextBox"
                      Grid.Row="3"
                      Grid.Column="1"
-                     Text="{Binding Price}" 
+                     Text="{Binding Price, Converter={StaticResource LocalPriceConverter}}" 
                      Margin="5"/>
             <Label Grid.Row="4"
                    Content="Stock amount"

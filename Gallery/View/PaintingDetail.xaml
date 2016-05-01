@@ -1,0 +1,99 @@
+﻿<Window x:Class="Gallery.View.PaintingDetail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Gallery.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <ScrollViewer>
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Name="ArtNameLabel"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   Content="{Binding PaintingName,
+                                     Mode=OneWay}"
+                   FontSize="40"
+                   FontWeight="Light" />
+
+            <Image Name="ArtImage"
+                   Grid.Row="0"
+                   Grid.Column="2"
+                   Grid.RowSpan="11"
+                   Source="{Binding Path=Image}" />
+
+            <Label Grid.Row="2"
+                   VerticalAlignment="Center"
+                   Content="Description"
+                   FontWeight="Bold" />
+
+            <TextBox Name="ArtDescriptionTextBox"
+                     Grid.Row="2"
+                     Grid.Column="1"
+                     Text="{Binding Description}" 
+                     TextWrapping="Wrap"
+                     AcceptsReturn="True"
+                     Margin="5"/>
+            <Label Grid.Row="3"
+                   Content="Price"
+                   FontWeight="Bold" />
+            <TextBox Name="ArtPriceTextBox"
+                     Grid.Row="3"
+                     Grid.Column="1"
+                     Text="{Binding Price}" 
+                     Margin="5"/>
+            <Label Grid.Row="4"
+                   Content="Stock amount"
+                   FontWeight="Bold" />
+            <TextBox Name="StockAmountTextBox"
+                     Grid.Row="4"
+                     Grid.Column="1"
+                     Text="{Binding AmountInStock}" 
+                     Margin="5"/>
+            <Label Grid.Row="5"
+                   Content="First time added"
+                   FontWeight="Bold" />
+
+            <TextBox Name="FirstTimeAddedTextBox"
+                     Grid.Row="5"
+                     Grid.Column="1"
+                     Text="{Binding FirstAquired}" 
+                     Margin="5"/>
+           
+            <StackPanel Grid.Row="9"
+                        Grid.ColumnSpan="2"
+                        Orientation="Horizontal">
+                <Button Name="SavePaintingButton"
+                        Margin="5"
+                        Click="SavePaintingButton_Click"
+                        Content="Save Painting" />
+                <Button Name="DeletePaintingButton"
+                        Margin="5"
+                        Click="DeletePaintingButton_Click"
+                        Content="Delete Painting" />
+                <Button Name="ChangePaintingButton"
+                        Margin="5"
+                        Content="Change Painting" />
+            </StackPanel>
+
+        </Grid>
+    </ScrollViewer>
+</Window>
